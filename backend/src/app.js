@@ -8,11 +8,13 @@ import { connect } from "./dao/mongo/database.js";
 import fileUpload from "express-fileupload";
 import cookieParser from 'cookie-parser';
 import newAdopted from "./routes/newAdopt.routes.js";
+import compression from 'express-compression';
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
+app.use(compression({ brotli: { enabled: true, zlib: {} } }));
 app.use(cookieParser());
 app.use(cors({
     origin: 'http://localhost:5173',
