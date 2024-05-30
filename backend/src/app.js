@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(compression({ brotli: { enabled: true, zlib: {} } }));
 app.use(cookieParser());
 app.use(cors({
-    origin: 'https://adoption-web-application.vercel.app/',
+    origin: 'https://adoption-web-application.vercel.app',
     credentials: true
 }));
 app.use(express.urlencoded({ extended: true }));
