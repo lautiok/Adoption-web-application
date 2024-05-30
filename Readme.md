@@ -22,6 +22,7 @@ We handle the complete development of the website, both the backend and the fron
 - fs: Module for working with the file system.
 - jsonwebtoken: Library for generating and verifying JWT (JSON Web Tokens) tokens.
 - zod: Library for validation and definition of data schemas.
+- gzip y Brotli: Data compression algorithms used to reduce the size of files transmitted over the web
 
 Frontend:
 
