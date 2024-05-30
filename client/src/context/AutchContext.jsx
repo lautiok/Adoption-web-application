@@ -1,22 +1,24 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { registerRequest, loginRequest, verifyRequest } from '../api/auth.js';
+import { registerRequest, loginRequest, verifyRequest } from '../api/auth.js'
 import Cookies from "js-cookie";
 
-export const AuthContext = createContext();
+
+export const AuthContext = createContext()
+
 
 export const useAuth = () => {
-    const context = useContext(AuthContext);
+    const context = useContext(AuthContext)
     if (!context) {
-        throw new Error('useAuth must be used within an AuthProvider');
+        throw new Error('useAuth must be used within an AuthProvider')
     }
-    return context;
-};
+    return context
+}
 
 export const Authprovider = ({ children }) => {
-    const [user, setUser] = useState(null);
-    const [isAuth, setIsAuth] = useState(false);
-    const [errors, setErrors] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(null)
+    const [isAuth, setIsAuth] = useState(false)
+    const [errors, setErrors] = useState([])
+    const [loading, setLoading] = useState(true)
 
     const signup = async (user) => {
         try {
@@ -27,28 +29,31 @@ export const Authprovider = ({ children }) => {
             }
         } catch (error) {
             setErrors(error.response.data);
+
         }
     };
 
-    const signin = async (user) => {
+    const singin = async (user) => {
         try {
             const res = await loginRequest(user);
+            console.log(res)
             setIsAuth(true);
             setUser(res.data);
         } catch (error) {
             if (Array.isArray(error.response.data)) {
                 setErrors(error.response.data);
-            } else {
+            }
+            else {
                 setErrors([error.response.data.message]);
             }
         }
-    };
+    }
 
     const logout = () => {
         Cookies.remove('token');
         setIsAuth(false);
         setUser(null);
-    };
+    }
 
     useEffect(() => {
         const checkLogin = async () => {
@@ -60,7 +65,7 @@ export const Authprovider = ({ children }) => {
             }
 
             try {
-                const res = await verifyRequest();
+                const res = await verifyRequest(cookies.token);
                 if (!res.data) return setIsAuth(false);
                 setIsAuth(true);
                 setUser(res.data);
@@ -76,7 +81,7 @@ export const Authprovider = ({ children }) => {
     return (
         <AuthContext.Provider value={{
             signup,
-            signin,
+            singin,
             logout,
             loading,
             user,
@@ -85,5 +90,5 @@ export const Authprovider = ({ children }) => {
         }}>
             {children}
         </AuthContext.Provider>
-    );
-};
+    )
+}
