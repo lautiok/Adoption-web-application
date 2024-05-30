@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = import.meta.env.VITE_API;
+const url = "https://adoption-web-application.onrender.com/api";
 
 const instance = axios.create({
     baseURL: url,
