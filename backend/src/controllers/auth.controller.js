@@ -58,9 +58,12 @@ export const login = async (req, res) => {
 };
 
 export const logout =  (req, res) => {
-    res.cookie("token", "", {
-        expires: new Date(Date.now(0)),
-    })
+    res.cookie("token", token, {
+        httpOnly: true,
+        expires: new Date(2),
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'Strict',
+    });
     return res.sendStatus(200)
 }
 
