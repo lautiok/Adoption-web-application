@@ -17,6 +17,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { NewAdoptContextProvider } from "./context/NewAdoptContext"; 
 import { TableAdopt } from "./pages/TableAdopt";
 import { FormulariodeAdopcion } from "./pages/FormulariodeAdopcion";
+import { Conoceme } from "./pages/Conoceme";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/nuestra-familia" element={<Family />} />
                 <Route path="/pets/:id" element={<PetsG />} />
                 <Route path="/formadopt/:id" element={<FormulariodeAdopcion />} />
+                <Route path="/nosotros" element={<Conoceme />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route element={<Protected />}>
                   <Route path="/dashboard" element={<TableAdopt />} />=
