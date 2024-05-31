@@ -32,7 +32,7 @@ export const AddPets = () => {
         onSubmit={async (values, actions) => {
           await createPet(values);
           actions.setSubmitting(false);
-          navigate("/dashboard");
+          navigate("/vermascotas");
         }}
       >
         {({ handleSubmit, setFieldValue, isSubmitting }) => (
