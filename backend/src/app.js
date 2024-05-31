@@ -18,7 +18,7 @@ app.use(compression({ brotli: { enabled: true, zlib: {} } }));
 app.use(cookieParser());
 app.use(cors({
     origin: config.origin,
-    credentials: true
+    credentials: true,
 }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
