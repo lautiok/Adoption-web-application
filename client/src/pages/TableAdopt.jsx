@@ -10,7 +10,7 @@ export const TableAdopt = () => {
     useEffect(() => {
         getAdopted();
         getPets(); // Fetch all pets to have them available for matching
-    }, [getAdopted, getPets]);
+    }, []);
 
     const getPetName = (mascotaid) => {
         const pet = pets.find((pet) => pet._id === mascotaid);

@@ -14,7 +14,7 @@ export const FormulariodeAdopcion = () => {
 
   useEffect(() => {
     getPet(id);
-  }, [id, getPet]);
+  }, []);
 
   const onSubmit = handleSubmit((data) => {
     const adoptionData = { ...data, mascotaid: id };

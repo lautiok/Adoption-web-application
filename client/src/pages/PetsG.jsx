@@ -11,7 +11,7 @@ export const PetsG = () => {
         if (id) {
             getPet(id);
         }
-    }, [id, getPet]);
+    }, []);
 
 
     return (

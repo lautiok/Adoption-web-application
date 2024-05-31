@@ -27,7 +27,7 @@ export function PetsContextProvider({ children }) {
     const getPet = async (id) => {
         try {
             const res = await getPetRequest(id);
-            setPet(res.data); // Set the single pet
+            setPet(res.data); 
         } catch (error) {
             console.log(error);
         }
