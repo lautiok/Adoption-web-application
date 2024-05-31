@@ -31,7 +31,6 @@ export const AddPets = () => {
         })}z
         onSubmit={async (values, actions) => {
           await createPet(values);
-
           actions.setSubmitting(false);
           navigate("/dashboard");
         }}
