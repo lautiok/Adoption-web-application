@@ -20,9 +20,7 @@ export const register = async (req, res) => {
         const token = await createAccessToken({
             id: savedUser._id
         });
-        res.cookie("token", token, {
-            sameSite: "none",
-        })
+        res.cookie("token", token)
         res.json({
             id: savedUser._id,
             name: savedUser.name,
@@ -47,9 +45,7 @@ export const login = async (req, res) => {
             id: userfaund._id,
         });
     
-        res.cookie("token", token, {
-            sameSite: "none",
-        })
+        res.cookie("token", token)
         res.json({
             id: userfaund._id,
             name: userfaund.name,
