@@ -48,7 +48,7 @@ export const login = async (req, res) => {
         });
     
         res.cookie("token", token, {
-            sameSite: "strict",
+            sameSite: "none",
         })
         res.json({
             id: userfaund._id,
