@@ -23,7 +23,7 @@ export const Familias = () => {
           await createAdopted(values);
 
           actions.setSubmitting(false);
-          navigate("/nuestra-familia");
+          navigate("/familyadopted");
         }}
       >
         {({ handleSubmit, setFieldValue, isSubmitting }) => (
