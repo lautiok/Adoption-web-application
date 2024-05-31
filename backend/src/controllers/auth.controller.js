@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import { createAccessToken } from "../libs/jwt.js";
 
 const cookieOptions = {
-    domain: "adoption-web-application.vercel.app", // Cambia esto al dominio que desees
+    domain: "https://adoption-web-application.vercel.app", // Cambia esto al dominio que desees
     expires: new Date(Date.now() + 60 * 60 * 1000), // 1 hora de expiración
     secure: true,
     httpOnly: true,
