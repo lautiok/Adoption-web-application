@@ -18,7 +18,7 @@ export const PetsG = () => {
         <div className="pets-container">
             {pet ? (
                 <CardID
-                    key={pet._id} // Add key for unique identification
+                    key={pet._id} 
                     id={pet._id}
                     image={pet.image.url}
                     text={pet.status}
@@ -28,7 +28,7 @@ export const PetsG = () => {
                     gender={pet.gender}
                 />
             ) : (
-                <p>Cargando ...</p> // Handle case when there is no pet
+                <p>Cargando ...</p> 
             )}
         </div>
     );
