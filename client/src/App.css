@@ -233,6 +233,8 @@
   margin-right: auto;
 }
 
+
+
 .cardid-image img {
   width: 400px;
   height: 400px; /* Ajusta el tamaño según tus necesidades */
@@ -240,6 +242,17 @@
   border-radius: 8px;
 }
 
+@media screen and (max-width: 428px) {
+  .cardid-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .cardid-image img {
+    width: 100%;
+    height: auto;
+  }
+}
 .cardid-info {
   text-align: center;
   margin-top: 1.5rem;
