@@ -28,7 +28,7 @@ export const PetsG = () => {
                     gender={pet.gender}
                 />
             ) : (
-                <p>No pet available</p> // Handle case when there is no pet
+                <p>Cargando ...</p> // Handle case when there is no pet
             )}
         </div>
     );
