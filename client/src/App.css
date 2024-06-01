@@ -13,6 +13,11 @@
   font-size: 12px;
 }
 
+.logo a {
+  color: #11303A;
+  text-decoration: none;
+}
+
 .nav ul {
   display: flex;
   align-items: center;
@@ -586,42 +591,68 @@ tbody tr:hover {
   margin-top: 20px;
 }
 
-.nav-responsive {
+/* nav responsive */
+
+.nav-container-responsive {
+  position: relative;
   display: none;
 }
 
-
-
-.nav-responsive-button {
-  background-color: transparent;
-  color: #11303A;
-  font-weight: 400;
-  font-size: 1.5rem;
+.toggle-btn {
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  margin: 20px;
   cursor: pointer;
+  background: none;
+  border: none;
+  color: #11303A;
+  font-size: 1.7em; 
 }
 
-.nav-responsive-menu ul {
+.nav-r {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  transition: right 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.nav-r.show {
+  right: 0;
+}
+
+.close-btn {
+  align-self: flex-end;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+}
+
+.nav-responsive .nav-ul {
   list-style: none;
-  margin: 0;
   padding: 0;
 }
 
-.nav-responsive-menu li {
-  margin-bottom: 10px;
+.nav-responsive .nav-ul li {
+  margin: 10px 0;
 }
 
-.nav-responsive-menu a {
-  color: #11303A;
+.nav-responsive .nav-ul li a {
+  color: white;
   text-decoration: none;
+  font-size: 1.2em;
 }
-
-
 
 footer {
   display: flex;
@@ -653,9 +684,10 @@ footer {
     display: none;
   }
 
-  .nav-responsive {
+  .nav-container-responsive {
     display: block;
   }
+
   .redes {
     display: none;
   }
