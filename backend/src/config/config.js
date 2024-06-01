@@ -8,8 +8,9 @@ const config = {
     CLOUDINARYNAME: process.env.CLOUDINARY_NAME,
     CLOUDINARYKEY: process.env.CLOUDINARY_KEY,
     CLOUDINARYSECRET: process.env.CLOUDINARY_SECRET,
-    origin: process.env.ORIGIN
-
+    origin: process.env.ORIGIN,
+    emailpass: process.env.MAIL_PASS,
+    emailuser: process.env.MAIL_USER
 }
 
 export default config
