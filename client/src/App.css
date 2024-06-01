@@ -41,6 +41,14 @@
   align-items: center;
 }
 
+.redes-responsive a {
+  margin-left: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px; 
+}
+
 .redes a {
   margin-left: 10px;
   color: #11303A;
@@ -87,17 +95,17 @@
   width: auto;
 }
 
-@media screen and (max-width: 1223px) {
-  .selector {
-    flex-direction: column;
-    gap: 2rem;
-  }
-}
 
 .selector h3 {
   margin: 0;
   color: #555;
   font-size: 1.1rem;
+}
+@media screen and (max-width: 1223px) {
+  .selector {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 .select {
@@ -351,6 +359,10 @@
   margin-top: 1rem;
 }
 
+.buttons-container-mobile {
+  display: none;
+}
+
 .card-create{
   border: none;
   background-color: transparent;
@@ -368,6 +380,10 @@
   background-color: #ffffff;
   color: #11303A;
 }
+
+
+
+
 
 .login-page {
   display: flex;
@@ -680,7 +696,14 @@ footer {
 
 
 @media screen and (max-width: 428px) {
+  .header {
+    padding: 0;
+  }
   .nav {
+    display: none;
+  }
+
+  .selector-title {
     display: none;
   }
 
@@ -694,6 +717,40 @@ footer {
   .pets-container{
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+  
+ 
+  .form-container-adopt input {
+    width: 90%;
+    padding: 1rem 1rem;
+
+  }
+  
+  .form-container-adopt textarea {
+    width: 90%;
+    padding: 1rem 1rem;
+    text-align: center;
+  }
+  .login-page {
+    padding: 2rem;
+    margin: 2rem 2rem;
+  }
+
+  .buttons-container {
+    display: none;
+  }
+
+  .buttons-container-mobile {
+    display: block;
+  }
+
+  .table-container {
+    display: none;
+  }
+
+  .form-container-add {
+    padding: 2rem;
+    margin: 2rem 1rem;
   }
 }
 

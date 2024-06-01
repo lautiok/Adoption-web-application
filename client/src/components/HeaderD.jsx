@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AutchContext'
+import { HeaderDres } from './HeaderDres'
 export const HeaderD = () => {
   const { logout } = useAuth()
   return (
+    <>
     <div className="buttons-container">
         <Link to="/dashboard"><button className="card-create">Inicio</button></Link>
         <Link to="/vermascotas"><button className="card-create">Ver mascotas</button></Link>
@@ -12,5 +14,11 @@ export const HeaderD = () => {
         <Link to="/addfamily"><button className="card-create">Añadir familias</button></Link>
         <button className='card-create' onClick={logout}>Cerrar sesión</button>
     </div>
+
+    <div className='buttons-container-mobile'>
+      <HeaderDres />
+    </div>
+    </>
+    
   )
 }

@@ -26,7 +26,7 @@ export const Filter = ({ onFilter }) => {
       <div className="filter-container">
         <div className="selector">
           <div className="tipo">
-            <h3>Tipo</h3>
+            <h3 className="selector-title">Tipo</h3>
             <Select
               placeholder="Todos los tipos"
               options={optionsType}
@@ -36,7 +36,7 @@ export const Filter = ({ onFilter }) => {
             />
           </div>
           <div className="age">
-            <h3>Edad</h3>
+            <h3 className="selector-title">Edad</h3>
             <Select
               placeholder="Todas las edades"
               options={optionsAge}
@@ -46,7 +46,7 @@ export const Filter = ({ onFilter }) => {
             />
           </div>
           <div className="gender">
-            <h3>Género</h3>
+            <h3 className="selector-title">Género</h3>
             <Select
               placeholder="Todos los generos"
               options={optionsGender}

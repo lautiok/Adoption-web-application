@@ -26,6 +26,10 @@ export const NavResponsive = () => {
               <li><Link to="/nuestra-familia">Nuestra Familia</Link></li>
             </ul>
           </nav>
+          <div className='redes-responsive'>
+            <a href=""><i className="bi bi-instagram"></i></a>
+            <a href=""><i className="bi bi-whatsapp"></i></a>
+          </div>
         </div>
       </div>
     );
