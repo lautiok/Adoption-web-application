@@ -11,7 +11,7 @@ export const PetsG = () => {
         if (id) {
             getPet(id);
         }
-    }, []);
+    }, [id, getPet]);
 
 
     return (
@@ -28,7 +28,7 @@ export const PetsG = () => {
                     gender={pet.gender}
                 />
             ) : (
-                <p>Cargando ...</p> 
+                <p>No pet available</p>
             )}
         </div>
     );

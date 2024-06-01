@@ -14,7 +14,7 @@ export const FilterResponsive = ({ onFilter }) => {
         {showFilters ? "Cerrar Filtros" : "Filtros"}
       </button>
       {showFilters && (
-        <div className="filter-menu">
+        <div className="filter-menu"> 
           <Filter onFilter={onFilter} />
         </div>
       )}

@@ -13,6 +13,7 @@ export const CardID = ({ id, image, description, age, gender, name }) => {
         <p>Edad {age}, Genero {gender}</p>
         <p>{description}</p>
         <Link className="cardid-button" to={`/formadopt/${id}`}>Adoptar</Link>
+
       </div>
     </div>
   );

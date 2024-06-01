@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Filter } from '../components/Filter';
 import { CardItem } from '../components/CardItem';
 import { UsePets } from '../context/PetsContext';
-import { FilterResponsive } from '../components/FilterResponsive';
 
 export const Adopta = () => {
   const { pets, getPets } = UsePets();
@@ -31,7 +30,6 @@ export const Adopta = () => {
   return (
     <main>
       <Filter onFilter={handleFilter} />
-      <FilterResponsive onFilter={handleFilter} />
       <CardItem filteredDogs={filteredDogs} />
     </main>
   );
