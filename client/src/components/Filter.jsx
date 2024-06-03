@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import {
   optionsAge,
@@ -20,6 +20,15 @@ export const Filter = ({ onFilter }) => {
       type: searchTerm?.value || null,
     });
   };
+
+  useEffect(() => {
+    onFilter({
+      race: selectedRace?.value || null,
+      age: selectedAge?.value || null,
+      gender: selectedGender?.value || null,
+      type: searchTerm?.value || null,
+    });
+  }, [selectedRace, selectedAge, selectedGender, searchTerm, onFilter]);
 
   return (
     <main>
