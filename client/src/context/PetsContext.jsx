@@ -13,7 +13,7 @@ export const UsePets = () => {
 
 export function PetsContextProvider({ children }) {
     const [pets, setPets] = useState([]);
-    const [pet, setPet] = useState(null);
+    const [pet, setPet] = useState();
 
     const getPets = async () => {
         try {

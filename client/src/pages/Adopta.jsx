@@ -5,16 +5,15 @@ import { UsePets } from '../context/PetsContext';
 
 export const Adopta = () => {
   const { pets, getPets } = UsePets();
-  const [filteredDogs, setFilteredDogs] = useState();
+  const [filteredDogs, setFilteredDogs] = useState([]);
 
   useEffect(() => {
-    getPets();
-  }, []); // Este efecto se ejecuta una vez al montar el componente
-
+    getPets(); 
+  }, []); 
 
   useEffect(() => {
-    setFilteredDogs(pets); // Este efecto se ejecuta cada vez que 'pets' cambia
-  }, [ pets ]);
+    setFilteredDogs(pets); 
+  }, [pets]); 
 
   const handleFilter = (filters) => {
     const { race, age, gender, type } = filters;
