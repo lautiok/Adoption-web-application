@@ -25,6 +25,7 @@ export const createNewAdopted = async (req, res) => {
                         <li>Comprometerse con el cuidado, la salud y la castración de la mascota.</li>
                     </ul>
                     <p>¡Gracias por querer darle un hogar a una mascota!</p>
+                    <p>Saludos, SafePaws</p>
                 </div>
             `
         };
