@@ -6,9 +6,14 @@ import { UsePets } from '../context/PetsContext';
 export const Adopta = () => {
   const { pets, getPets } = UsePets();
   const [filteredDogs, setFilteredDogs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getPets(); 
+    const fetchPets = async () => {
+      await getPets();
+      setIsLoading(false);
+    }
+    fetchPets();
   }, []); 
 
   useEffect(() => {
@@ -29,7 +34,11 @@ export const Adopta = () => {
   return (
     <main>
       <Filter onFilter={handleFilter} />
-      <CardItem filteredDogs={filteredDogs} />
+      {isLoading ? (
+        <p className="loading">Cargando...</p>
+      ) : (
+        <CardItem filteredDogs={filteredDogs} />
+      )} 
     </main>
   );
 }

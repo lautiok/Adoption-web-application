@@ -1,3 +1,10 @@
+.loading {
+  color: #11303A;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+
 .header {
   display: flex;
   justify-content: space-around;

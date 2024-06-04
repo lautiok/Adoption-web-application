@@ -6,12 +6,12 @@ import { UsePets } from "../context/PetsContext";
 export const PetsG = () => {
   const { getPet, pet } = UsePets();
   const { id } = useParams();
-  const [isLoading, setIsLoading] = useState(true);  // Estado de carga
+  const [isLoading, setIsLoading] = useState(true);  
 
   useEffect(() => {
     const fetchPet = async () => {
       await getPet(id);
-      setIsLoading(false);  // Cambiar el estado de carga a false una vez que los datos estén obtenidos
+      setIsLoading(false);  
     };
 
     fetchPet();
@@ -19,8 +19,8 @@ export const PetsG = () => {
 
   return (
     <div className="pets-container">
-      {isLoading ? (  // Mostrar un indicador de carga mientras se obtienen los datos
-        <p>Cargando...</p>
+      {isLoading ? ( 
+        <p className="loading">Cargando...</p>
       ) : (
         pet ? (
           <CardID
