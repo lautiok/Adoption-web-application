@@ -14,7 +14,7 @@ export const createNewAdopted = async (req, res) => {
             to: email,
             subject: '¡Te acompañamos en esta nueva etapa!',
             html: `
-                <div style="font-family: Arial, sans-serif; color: #333;">
+                <div style="font-family: Arial, sans-serif; color: #333; padding: 20px;, background-color: #F8F1E4, border-radius: 10px, border: 1px solid #ccc, display: flex, flex-direction: column,">
                     <h1 style="color: #4CAF50;">¡Te acompañamos en esta nueva etapa!</h1>
                     <p>REQUISITOS PARA ADOPTAR</p>
                     <ul>

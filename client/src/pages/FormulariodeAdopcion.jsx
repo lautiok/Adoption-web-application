@@ -41,10 +41,10 @@ export const FormulariodeAdopcion = () => {
 
       <div className="form-adopt">
         <form onSubmit={onSubmit} className="form-container-adopt">
-          <input type="text" placeholder="Nombre y Apellidos" {...register("name")} />
-          <input type="email" placeholder="Email" {...register("email")} />
-          <input type="text" placeholder="Teléfono" {...register("phone")} />
-          <textarea rows="5" cols="30" placeholder={`QUEREMOS SABER A QUE FAMILIA VA ${pet?.name}`} {...register("message")}></textarea>
+          <input type="text" placeholder="Nombre y Apellidos" {...register("name")} required />
+          <input type="email" placeholder="Email" {...register("email")} required />
+          <input type="text" placeholder="Teléfono" {...register("phone")} required />
+          <textarea rows="5" cols="30" placeholder={`QUEREMOS SABER A QUE FAMILIA VA ${pet?.name}`} {...register("message")} required ></textarea>
           <button type="submit">Enviar</button>
         </form>
       </div>
