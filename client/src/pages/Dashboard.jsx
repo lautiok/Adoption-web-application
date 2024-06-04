@@ -1,19 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { UsePets } from "../context/PetsContext";
 import { HeaderD } from "../components/HeaderD";
 
 export const Dashboard = () => {
   const { getPets, pets, delatePet } = UsePets();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getPets();
+    const fetchPets = async () => {
+      await getPets();
+      setIsLoading(false);
+    }
+
+    fetchPets();
   }, []);
   return (
     <main>
        <HeaderD />
       <div className="card-container">
-        {pets.length === 0 ? (
-          <div>No hay mascotas</div>
+        {isLoading ?(
+          <p className="loading">Cargando...</p>
+        ):( pets.length === 0 ? (
+          <p className="loading">No hay mascotas</p>
         ) : (
           pets.map((dog) => (
             <div key={dog._id} className="card">
@@ -29,6 +37,7 @@ export const Dashboard = () => {
               </div>
             </div>
           ))
+        )
         )}
       </div>
     </main>

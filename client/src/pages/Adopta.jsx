@@ -37,6 +37,9 @@ export const Adopta = () => {
       {isLoading ? (
         <p className="loading">Cargando...</p>
       ) : (
+        !filteredDogs.length ? (
+          <p className='loading'>No hay mascotas</p>
+        ) :
         <CardItem filteredDogs={filteredDogs} />
       )} 
     </main>

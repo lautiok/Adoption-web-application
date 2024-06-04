@@ -1,19 +1,28 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {UseAdopted} from '../context/AdoptedContext'
 import { HeaderD } from '../components/HeaderD'
 
 export const DelateFamily = () => {
     const {getAdopted, adopted, deleteAdopted} = UseAdopted()
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        getAdopted()
+      const fetchAdopted = async () => {
+        await getAdopted();
+        setIsLoading(false);
+      }
+
+      fetchAdopted();
     }, [])
 
   return (
     <main>
     <HeaderD />
   <div className="card-container">
-    {adopted.length === 0 ? (
+    { isLoading ? (
+      <p className="loading">Cargando...</p>
+    ) : (
+      adopted.length === 0 ? (
       <div>No hay familias</div>
     ) : (
       adopted.map((dog) => (
@@ -30,6 +39,7 @@ export const DelateFamily = () => {
           </div>
         </div>
       ))
+    ) 
     )}
   </div>
 </main>
