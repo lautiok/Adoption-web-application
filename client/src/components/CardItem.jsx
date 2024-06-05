@@ -8,7 +8,7 @@ export const CardItem = ({ filteredDogs }) => {
         <Card 
           key={dog._id} 
           image={dog.image.url} 
-          text={dog.status} 
+          text={dog.name} 
           _id={dog._id} 
         />
       ))}
