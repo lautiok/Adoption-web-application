@@ -5,22 +5,20 @@ export const createAdopt = async (req, res) => {
     try {
         const { name, age, gender, type, description, status } = req.body;
         let image;
-        if (req.files.image) {
-            const imageRes = await uploadImage(req.files.image.tempFilePath)
-            await fs.remove(req.files.image.tempFilePath)
+        if (req.files && req.files.image) {
+            const imageRes = await uploadImage(req.files.image.tempFilePath);
+            await fs.remove(req.files.image.tempFilePath);
             image = {
                 url: imageRes.secure_url,
                 public_id: imageRes.public_id
-            }
-
-            
+            };
         }
 
         const newAdopt = new Adopt({ name, age, gender, type, description, status, image });
         await newAdopt.save();
         res.status(201).json(newAdopt);
     } catch (error) {
-        return res.status(500).json({ message: error.message }); 
+        return res.status(500).json({ message: error.message });
     }
 };
 

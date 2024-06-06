@@ -1,5 +1,5 @@
 import User from "../dao/mongo/models/usersModels.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { createAccessToken } from "../libs/jwt.js";
 

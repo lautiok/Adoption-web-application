@@ -12,13 +12,24 @@ export const Filter = ({ onFilter }) => {
   const [selectedGender, setSelectedGender] = useState(null);
   const [searchTerm, setSearchTerm] = useState(null);
 
+  const [filteredRace, setFilteredRace] = useState(null);
+  const [filteredAge, setFilteredAge] = useState(null);
+  const [filteredGender, setFilteredGender] = useState(null);
+  const [filteredTerm, setFilteredTerm] = useState(null);
+
   const handleFilter = () => {
-    onFilter({
+    const filters = {
       race: selectedRace?.value || null,
       age: selectedAge?.value || null,
       gender: selectedGender?.value || null,
       type: searchTerm?.value || null,
-    });
+    };
+    onFilter(filters);
+    
+    setFilteredRace(selectedRace);
+    setFilteredAge(selectedAge);
+    setFilteredGender(selectedGender);
+    setFilteredTerm(searchTerm);
   };
 
   return (
@@ -62,11 +73,11 @@ export const Filter = ({ onFilter }) => {
       </div>
       <div className="filtrado">
         <p>Filtrado por:</p>
-        {selectedAge && <p className="select-option">{selectedAge.label}</p>}
-        {selectedGender && (
-          <p className="select-option">{selectedGender.label}</p>
+        {filteredAge && <p className="select-option">{filteredAge.label}</p>}
+        {filteredGender && (
+          <p className="select-option">{filteredGender.label}</p>
         )}
-        {searchTerm && <p className="select-option">{searchTerm.label}</p>}
+        {filteredTerm && <p className="select-option">{filteredTerm.label}</p>}
       </div>
     </main>
   );
