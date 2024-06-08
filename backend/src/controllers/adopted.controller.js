@@ -5,6 +5,7 @@ import fs from "fs-extra";
 export const createAdopted = async (req, res) => {
     try {
         const { name } = req.body;
+        console.log('request body', req.body);
         let image;
         if (req.files.image) {
             const imageRes = await uploadImage(req.files.image.tempFilePath)
@@ -20,7 +21,7 @@ export const createAdopted = async (req, res) => {
         await newAdopted.save();
         res.status(201).json(newAdopted);
     } catch (error) {
-        return res.status(500).json({ message: error.message });
+        return res.status(400).json({ message: error.message });
     }
 }
 
