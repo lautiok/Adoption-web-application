@@ -32,20 +32,19 @@ export const TableAdopt = () => {
         ) : adopted.length === 0 ? (
           <p className="loading">No hay adoptados</p>
         ) : (
-          adopted &&
-          adopted.map((item, index) => (
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Message</th>
-                  <th>Mascota Name</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Message</th>
+                <th>Mascota Name</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {adopted.map((item, index) => (
                 <tr key={index}>
                   <td>{item.name}</td>
                   <td>{item.email}</td>
@@ -53,18 +52,17 @@ export const TableAdopt = () => {
                   <td>{item.message}</td>
                   <td>{getPetName(item.mascotaid)}</td>
                   <td>
-                    {" "}
                     <button
                       className="card-button-delete-adopt"
                       onClick={() => deleteAdopted(item._id)}
                     >
                       Delete
-                    </button>{" "}
+                    </button>
                   </td>
                 </tr>
-              </tbody>
-            </table>
-          ))
+              ))}
+            </tbody>
+          </table>
         )}
       </div>
     </main>
