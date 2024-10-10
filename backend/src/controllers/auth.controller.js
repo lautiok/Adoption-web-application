@@ -50,7 +50,6 @@ export const login = async (req, res) => {
             id: userfaund._id,
             name: userfaund.name,
             email: userfaund.email,
-            password: userfaund.password
         });
         } catch (error) {
         res.status(500).json({ message: error.message });
